@@ -20,3 +20,4 @@
 
 # Ignore application configuration and secret
 /config/application.yml
+/.idea
