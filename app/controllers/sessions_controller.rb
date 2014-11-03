@@ -2,13 +2,13 @@ class SessionsController < ApplicationController
 
   def oauth
     auth = request.env["omniauth.auth"]
-    if flatiron_student?(auth["credentials"]["token"])
+    # if flatiron_student?(auth["credentials"]["token"])
       user = User.find_or_create_by_oauth(auth)
       login(user)
       redirect_to root_path, notice: "Successfully logged in. Welcome to xp!"
-    else
-      redirect_to root_path, alert: "Must be a Flatiron student to use xp... (for now)."
-    end
+    # else
+    #   redirect_to root_path, alert: "Must be a Flatiron student to use xp... (for now)."
+    # end
   end
 
   def destroy
